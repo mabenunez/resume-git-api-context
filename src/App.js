@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import Header from './components/header/Header.component';
+import Projects from './components/projects/Projects.component';
 import './App.css';
 
 class App extends Component {
@@ -16,15 +19,18 @@ class App extends Component {
       this.setState({
         github : parsedData
       })
-    } catch {
-      console.log('err')
+    } catch(err) {
+      console.log(err)
     }
   }
   render(){
     return (
-      <div>
-        
-      </div>
+      <ThemeProvider value={this.state.github}>
+
+        <div>
+          <Header></Header>
+        </div>
+      </ThemeProvider>
     )
   }
 }
