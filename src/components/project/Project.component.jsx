@@ -5,9 +5,11 @@ class Project extends Component {
   static contextType = ThemeContext;
   render(){
     return (
-      <ul>
-        {this.context}
-      </ul>
+      <li>
+        <h3>{this.props.name}</h3>
+        <p>{this.props.description}</p>
+        <a href={this.props.url}>Check it out!</a>
+      </li>
     )
   }
 }
